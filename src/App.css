@@ -13,11 +13,13 @@
   font-size: 14px;
   font-family: Roboto !important;
 }
+
 .red {
   color: var(--color-212529);
   font-size: 14px;
   font-family: Roboto !important;
 }
+
 .quill {
   background-color: white;
 }
@@ -26,6 +28,7 @@
   box-shadow: none;
   border-color: var(--color-c3d4da);
 }
+
 .title {
   font: 28px;
   font-family: Roboto !important;
@@ -37,6 +40,7 @@
   font-family: Roboto !important;
   color: var(--color-212529);
 }
+
 .desc {
   font: 14px;
   font-family: Roboto !important;

@@ -12,9 +12,9 @@ import {
   updateAProductCategory,
 } from "../features/pcategory/pcategorySlice";
 let schema = yup.object().shape({
-  title: yup.string().required("Category Name is Required"),
+  title: yup.string().required("Category Name is required"),
 });
-const Addcat = () => {
+const AddCat = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const getPCatId = location.pathname.split("/")[3];
@@ -37,10 +37,10 @@ const Addcat = () => {
   }, [getPCatId]);
   useEffect(() => {
     if (isSuccess && createdCategory) {
-      toast.success("Category Added Successfullly!");
+      toast.success("Category Added Successfully!");
     }
     if (isSuccess && updatedCategory) {
-      toast.success("Category Updated Successfullly!");
+      toast.success("Category Updated Successfully!");
       navigate("/admin/list-category");
     }
     if (isError) {
@@ -79,7 +79,7 @@ const Addcat = () => {
             label="Enter Product Category"
             onChange={formik.handleChange("title")}
             onBlur={formik.handleBlur("title")}
-            val={formik.values.title}
+            value={formik.values.title}
             id="brand"
           />
           <div className="error">
@@ -97,4 +97,4 @@ const Addcat = () => {
   );
 };
 
-export default Addcat;
+export default AddCat;

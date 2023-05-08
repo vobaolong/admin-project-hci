@@ -40,7 +40,7 @@ const columns = [
   },
 ];
 
-const Productlist = () => {
+const ProductList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
@@ -78,4 +78,4 @@ const Productlist = () => {
   );
 };
 
-export default Productlist;
+export default ProductList;

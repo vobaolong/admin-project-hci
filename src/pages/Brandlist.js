@@ -27,7 +27,7 @@ const columns = [
   },
 ];
 
-const Brandlist = () => {
+const BrandList = () => {
   const [open, setOpen] = useState(false);
   const [brandId, setbrandId] = useState("");
   const showModal = (e) => {
@@ -93,4 +93,4 @@ const Brandlist = () => {
   );
 };
 
-export default Brandlist;
+export default BrandList;

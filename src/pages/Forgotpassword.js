@@ -1,7 +1,7 @@
 import React from "react";
 import CustomInput from "../components/CustomInput";
 
-const Forgotpassword = () => {
+const ForgotPassword = () => {
   return (
     <div className="py-5" style={{ background: "#ffd333", minHeight: "100vh" }}>
       <br />
@@ -30,4 +30,4 @@ const Forgotpassword = () => {
   );
 };
 
-export default Forgotpassword;
+export default ForgotPassword;

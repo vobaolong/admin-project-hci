@@ -13,9 +13,9 @@ import {
 } from "../features/brand/brandSlice";
 
 let schema = yup.object().shape({
-  title: yup.string().required("Brand Name is Required"),
+  title: yup.string().required("Brand Name is required"),
 });
-const Addbrand = () => {
+const AddBrand = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -39,10 +39,10 @@ const Addbrand = () => {
 
   useEffect(() => {
     if (isSuccess && createdBrand) {
-      toast.success("Brand Added Successfullly!");
+      toast.success("Brand Added Successfully!");
     }
     if (isSuccess && updatedBrand) {
-      toast.success("Brand Updated Successfullly!");
+      toast.success("Brand Updated Successfully!");
       navigate("/admin/list-brand");
     }
 
@@ -102,4 +102,4 @@ const Addbrand = () => {
   );
 };
 
-export default Addbrand;
+export default AddBrand;

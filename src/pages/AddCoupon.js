@@ -13,9 +13,9 @@ import {
 } from "../features/coupon/couponSlice";
 
 let schema = yup.object().shape({
-  name: yup.string().required("Coupon Name is Required"),
-  expiry: yup.date().required("Expiry Date is Required"),
-  discount: yup.number().required("Discount Percentage is Required"),
+  name: yup.string().required("Coupon Name is required"),
+  expiry: yup.date().required("Expiry Date is required"),
+  discount: yup.number().required("Discount Percentage is required"),
 });
 const AddCoupon = () => {
   const dispatch = useDispatch();
@@ -50,10 +50,10 @@ const AddCoupon = () => {
 
   useEffect(() => {
     if (isSuccess && createdCoupon) {
-      toast.success("Coupon Added Successfullly!");
+      toast.success("Coupon Added Successfully!");
     }
     if (isSuccess && updatedCoupon) {
-      toast.success("Coupon Updated Successfullly!");
+      toast.success("Coupon Updated Successfully!");
       navigate("/admin/coupon-list");
     }
     if (isError && couponName && couponDiscount && couponExpiry) {
@@ -95,7 +95,7 @@ const AddCoupon = () => {
             name="name"
             onChange={formik.handleChange("name")}
             onBlur={formik.handleBlur("name")}
-            val={formik.values.name}
+            value={formik.values.name}
             label="Enter Coupon Name"
             id="name"
           />
@@ -107,7 +107,7 @@ const AddCoupon = () => {
             name="expiry"
             onChange={formik.handleChange("expiry")}
             onBlur={formik.handleBlur("expiry")}
-            val={formik.values.expiry}
+            value={formik.values.expiry}
             label="Enter Expiry Data"
             id="date"
           />
@@ -119,7 +119,7 @@ const AddCoupon = () => {
             name="discount"
             onChange={formik.handleChange("discount")}
             onBlur={formik.handleBlur("discount")}
-            val={formik.values.discount}
+            value={formik.values.discount}
             label="Enter Discount"
             id="discount"
           />

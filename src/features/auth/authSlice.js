@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import authService from "./authServices";
 
-const getUserfromLocalStorage = localStorage.getItem("user")
+const getUserFromLocalStorage = localStorage.getItem("user")
   ? JSON.parse(localStorage.getItem("user"))
   : null;
 const initialState = {
-  user: getUserfromLocalStorage,
+  user: getUserFromLocalStorage,
   orders: [],
   isError: false,
   isLoading: false,
@@ -33,6 +33,7 @@ export const getOrders = createAsyncThunk(
     }
   }
 );
+
 export const getOrderByUser = createAsyncThunk(
   "order/get-order",
   async (id, thunkAPI) => {
@@ -48,8 +49,8 @@ export const authSlice = createSlice({
   name: "auth",
   initialState: initialState,
   reducers: {},
-  extraReducers: (buildeer) => {
-    buildeer
+  extraReducers: (builder) => {
+    builder
       .addCase(login.pending, (state) => {
         state.isLoading = true;
       })

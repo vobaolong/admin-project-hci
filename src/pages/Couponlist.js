@@ -34,12 +34,12 @@ const columns = [
   },
 ];
 
-const Couponlist = () => {
+const CouponList = () => {
   const [open, setOpen] = useState(false);
-  const [couponId, setcouponId] = useState("");
+  const [couponId, setCouponId] = useState("");
   const showModal = (e) => {
     setOpen(true);
-    setcouponId(e);
+    setCouponId(e);
   };
 
   const hideModal = () => {
@@ -101,4 +101,4 @@ const Couponlist = () => {
   );
 };
 
-export default Couponlist;
+export default CouponList;

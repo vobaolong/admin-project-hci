@@ -1,7 +1,7 @@
 import React from "react";
 import CustomInput from "../components/CustomInput";
 
-const Resetpassword = () => {
+const ResetPassword = () => {
   return (
     <div className="py-5" style={{ background: "#ffd333", minHeight: "100vh" }}>
       <br />
@@ -33,4 +33,4 @@ const Resetpassword = () => {
   );
 };
 
-export default Resetpassword;
+export default ResetPassword;

@@ -37,7 +37,6 @@ const bCategoryService = {
   createBlogCategory,
   deleteBlogCategory,
   getBlogCategory,
-  deleteBlogCategory,
   updateBlogCategory,
 };
 

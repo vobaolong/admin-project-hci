@@ -28,12 +28,12 @@ const columns = [
   },
 ];
 
-const Categorylist = () => {
+const CategoryList = () => {
   const [open, setOpen] = useState(false);
-  const [pCatId, setpCatId] = useState("");
+  const [pCatId, setCatId] = useState("");
   const showModal = (e) => {
     setOpen(true);
-    setpCatId(e);
+    setCatId(e);
   };
 
   const hideModal = () => {
@@ -93,4 +93,4 @@ const Categorylist = () => {
   );
 };
 
-export default Categorylist;
+export default CategoryList;

@@ -10,8 +10,8 @@ let schema = yup.object().shape({
   email: yup
     .string()
     .email("Email should be valid")
-    .required("Email is Required"),
-  password: yup.string().required("Password is Required"),
+    .required("Email is required"),
+  password: yup.string().required("Password is required"),
 });
 const Login = () => {
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const Login = () => {
         <h3 className="text-center title">Login</h3>
         <p className="text-center">Login to your account to continue.</p>
         <div className="error text-center">
-          {message.message == "Rejected" ? "You are not an Admin" : ""}
+          {message.message === "Rejected" ? "You are not an Admin" : ""}
         </div>
         <form action="" onSubmit={formik.handleSubmit}>
           <CustomInput
@@ -58,7 +58,7 @@ const Login = () => {
             name="email"
             onChange={formik.handleChange("email")}
             onBlur={formik.handleBlur("email")}
-            val={formik.values.email}
+            value={formik.values.email}
           />
           <div className="error mt-2">
             {formik.touched.email && formik.errors.email}
@@ -70,7 +70,7 @@ const Login = () => {
             name="password"
             onChange={formik.handleChange("password")}
             onBlur={formik.handleBlur("password")}
-            val={formik.values.password}
+            value={formik.values.password}
           />
           <div className="error mt-2">
             {formik.touched.password && formik.errors.password}

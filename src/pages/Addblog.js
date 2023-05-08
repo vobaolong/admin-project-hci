@@ -11,18 +11,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import {
   createBlogs,
-  getABlog,
+  getBlog,
   resetState,
-  updateABlog,
+  updateBlog,
 } from "../features/blogs/blogSlice";
 import { getCategories } from "../features/bcategory/bcategorySlice";
 
 let schema = yup.object().shape({
-  title: yup.string().required("Title is Required"),
-  description: yup.string().required("Description is Required"),
-  category: yup.string().required("Category is Required"),
+  title: yup.string().required("Title is required"),
+  description: yup.string().required("Description is required"),
+  category: yup.string().required("Category is required"),
 });
-const Addblog = () => {
+const AddBlog = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -43,7 +43,7 @@ const Addblog = () => {
   } = blogState;
   useEffect(() => {
     if (getBlogId !== undefined) {
-      dispatch(getABlog(getBlogId));
+      dispatch(getBlog(getBlogId));
       img.push(blogImages);
     } else {
       dispatch(resetState());
@@ -57,10 +57,10 @@ const Addblog = () => {
 
   useEffect(() => {
     if (isSuccess && createdBlog) {
-      toast.success("Blog Added Successfullly!");
+      toast.success("Blog Added Successfully!");
     }
     if (isSuccess && updatedBlog) {
-      toast.success("Blog Updated Successfullly!");
+      toast.success("Blog Updated Successfully!");
       navigate("/admin/blog-list");
     }
     if (isError) {
@@ -92,7 +92,7 @@ const Addblog = () => {
     onSubmit: (values) => {
       if (getBlogId !== undefined) {
         const data = { id: getBlogId, blogData: values };
-        dispatch(updateABlog(data));
+        dispatch(updateBlog(data));
         dispatch(resetState());
       } else {
         dispatch(createBlogs(values));
@@ -119,7 +119,7 @@ const Addblog = () => {
               name="title"
               onChange={formik.handleChange("title")}
               onBlur={formik.handleBlur("title")}
-              val={formik.values.title}
+              value={formik.values.title}
             />
           </div>
           <div className="error">
@@ -199,4 +199,4 @@ const Addblog = () => {
   );
 };
 
-export default Addblog;
+export default AddBlog;

@@ -15,20 +15,20 @@ import Dropzone from "react-dropzone";
 import { delImg, uploadImg } from "../features/upload/uploadSlice";
 import { createProducts, resetState } from "../features/product/productSlice";
 let schema = yup.object().shape({
-  title: yup.string().required("Title is Required"),
-  description: yup.string().required("Description is Required"),
-  price: yup.number().required("Price is Required"),
-  brand: yup.string().required("Brand is Required"),
-  category: yup.string().required("Category is Required"),
-  tags: yup.string().required("Tag is Required"),
+  title: yup.string().required("Title is required"),
+  description: yup.string().required("Description is required"),
+  price: yup.number().required("Price is required"),
+  brand: yup.string().required("Brand is required"),
+  category: yup.string().required("Category is required"),
+  tags: yup.string().required("Tag is required"),
   color: yup
     .array()
     .min(1, "Pick at least one color")
-    .required("Color is Required"),
-  quantity: yup.number().required("Quantity is Required"),
+    .required("Color is required"),
+  quantity: yup.number().required("Quantity is required"),
 });
 
-const Addproduct = () => {
+const AddProduct = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [color, setColor] = useState([]);
@@ -48,7 +48,7 @@ const Addproduct = () => {
   const { isSuccess, isError, isLoading, createdProduct } = newProduct;
   useEffect(() => {
     if (isSuccess && createdProduct) {
-      toast.success("Product Added Successfullly!");
+      toast.success("Product Added Successfully!");
     }
     if (isError) {
       toast.error("Something Went Wrong!");
@@ -113,7 +113,7 @@ const Addproduct = () => {
             name="title"
             onChange={formik.handleChange("title")}
             onBlur={formik.handleBlur("title")}
-            val={formik.values.title}
+            value={formik.values.title}
           />
           <div className="error">
             {formik.touched.title && formik.errors.title}
@@ -135,7 +135,7 @@ const Addproduct = () => {
             name="price"
             onChange={formik.handleChange("price")}
             onBlur={formik.handleBlur("price")}
-            val={formik.values.price}
+            value={formik.values.price}
           />
           <div className="error">
             {formik.touched.price && formik.errors.price}
@@ -217,7 +217,7 @@ const Addproduct = () => {
             name="quantity"
             onChange={formik.handleChange("quantity")}
             onBlur={formik.handleBlur("quantity")}
-            val={formik.values.quantity}
+            value={formik.values.quantity}
           />
           <div className="error">
             {formik.touched.quantity && formik.errors.quantity}
@@ -265,4 +265,4 @@ const Addproduct = () => {
   );
 };
 
-export default Addproduct;
+export default AddProduct;

@@ -5,7 +5,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-  deleteABlogCat,
+  deleteBlogCat,
   getCategories,
   resetState,
 } from "../features/bcategory/bcategorySlice";
@@ -28,7 +28,7 @@ const columns = [
   },
 ];
 
-const Blogcatlist = () => {
+const BlogCatList = () => {
   const [open, setOpen] = useState(false);
   const [blogCatId, setblogCatId] = useState("");
   const showModal = (e) => {
@@ -70,7 +70,7 @@ const Blogcatlist = () => {
     });
   }
   const deleteBlogCategory = (e) => {
-    dispatch(deleteABlogCat(e));
+    dispatch(deleteBlogCat(e));
     setOpen(false);
     setTimeout(() => {
       dispatch(getCategories());
@@ -94,4 +94,4 @@ const Blogcatlist = () => {
   );
 };
 
-export default Blogcatlist;
+export default BlogCatList;

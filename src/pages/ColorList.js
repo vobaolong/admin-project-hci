@@ -22,12 +22,12 @@ const columns = [
   },
 ];
 
-const Colorlist = () => {
+const ColorList = () => {
   const [open, setOpen] = useState(false);
-  const [colorId, setcolorId] = useState("");
+  const [colorId, setColorId] = useState("");
   const showModal = (e) => {
     setOpen(true);
-    setcolorId(e);
+    setColorId(e);
   };
 
   const hideModal = () => {
@@ -87,4 +87,4 @@ const Colorlist = () => {
   );
 };
 
-export default Colorlist;
+export default ColorList;

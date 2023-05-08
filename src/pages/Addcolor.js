@@ -12,9 +12,9 @@ import {
   updateAColor,
 } from "../features/color/colorSlice";
 let schema = yup.object().shape({
-  title: yup.string().required("Color is Required"),
+  title: yup.string().required("Color is required"),
 });
-const Addcolor = () => {
+const AddColor = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -37,10 +37,10 @@ const Addcolor = () => {
   }, [getColorId]);
   useEffect(() => {
     if (isSuccess && createdColor) {
-      toast.success("Color Added Successfullly!");
+      toast.success("Color Added Successfully!");
     }
     if (isSuccess && updatedColor) {
-      toast.success("Color Updated Successfullly!");
+      toast.success("Color Updated Successfully!");
       navigate("/admin/list-color");
     }
     if (isError) {
@@ -79,7 +79,7 @@ const Addcolor = () => {
             label="Enter Product Color"
             onChange={formik.handleChange("title")}
             onBlur={formik.handleBlur("title")}
-            val={formik.values.title}
+            value={formik.values.title}
             id="color"
           />
           <div className="error">
@@ -97,4 +97,4 @@ const Addcolor = () => {
   );
 };
 
-export default Addcolor;
+export default AddColor;
