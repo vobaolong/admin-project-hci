@@ -90,7 +90,7 @@ export const authSlice = createSlice({
         state.isError = false;
         state.isLoading = false;
         state.isSuccess = true;
-        state.orderbyuser = action.payload;
+        state.orderByUser = action.payload;
         state.message = "success";
       })
       .addCase(getOrderByUser.rejected, (state, action) => {

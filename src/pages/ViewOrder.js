@@ -48,7 +48,7 @@ const ViewOrder = () => {
   useEffect(() => {
     dispatch(getOrderByUser(userId));
   }, []);
-  const orderState = useSelector((state) => state.auth.orderbyuser[0].products);
+  const orderState = useSelector((state) => state.auth.orderByUser[0].products);
   console.log(orderState);
   const data1 = [];
   for (let i = 0; i < orderState.length; i++) {
@@ -62,7 +62,7 @@ const ViewOrder = () => {
       date: orderState[i].product.createdAt,
       action: (
         <>
-          <Link to="/" className=" fs-3 text-danger">
+          <Link to="/" className=" fs-3 text-success">
             <BiEdit />
           </Link>
           <Link className="ms-3 fs-3 text-danger" to="/">

@@ -45,6 +45,7 @@ const ProductList = () => {
   useEffect(() => {
     dispatch(getProducts());
   }, []);
+
   const productState = useSelector((state) => state.product.products);
   const data1 = [];
   for (let i = 0; i < productState.length; i++) {
@@ -54,13 +55,13 @@ const ProductList = () => {
       brand: productState[i].brand,
       category: productState[i].category,
       color: productState[i].color,
-      price: `${productState[i].price}`,
+      price: `$ ${productState[i].price}`,
       action: (
         <>
-          <Link to="/" className=" fs-3 text-danger">
+          <Link to="/" className=" fs-3 text-success">
             <BiEdit />
           </Link>
-          <Link className="ms-3 fs-3 text-danger" to="/">
+          <Link to="/" className="ms-3 fs-3 text-danger">
             <AiFillDelete />
           </Link>
         </>

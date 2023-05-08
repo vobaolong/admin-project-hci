@@ -29,20 +29,22 @@ const columns = [
 
 const BrandList = () => {
   const [open, setOpen] = useState(false);
-  const [brandId, setbrandId] = useState("");
+  const [brandId, setBrandId] = useState("");
   const showModal = (e) => {
     setOpen(true);
-    setbrandId(e);
+    setBrandId(e);
   };
 
   const hideModal = () => {
     setOpen(false);
   };
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(resetState());
     dispatch(getBrands());
   }, []);
+
   const brandState = useSelector((state) => state.brand.brands);
   const data1 = [];
   for (let i = 0; i < brandState.length; i++) {

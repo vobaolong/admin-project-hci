@@ -11,6 +11,7 @@ export const getProducts = createAsyncThunk(
     }
   }
 );
+
 export const createProducts = createAsyncThunk(
   "product/create-products",
   async (productData, thunkAPI) => {
@@ -21,6 +22,7 @@ export const createProducts = createAsyncThunk(
     }
   }
 );
+
 export const resetState = createAction("Reset_all");
 
 const initialState = {

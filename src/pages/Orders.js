@@ -54,7 +54,7 @@ const Orders = () => {
       date: new Date(orderState[i].createdAt).toLocaleString(),
       action: (
         <>
-          <Link to="/" className=" fs-3 text-danger">
+          <Link to="/" className=" fs-3 text-success">
             <BiEdit />
           </Link>
           <Link className="ms-3 fs-3 text-danger" to="/">

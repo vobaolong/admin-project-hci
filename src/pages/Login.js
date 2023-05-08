@@ -13,6 +13,7 @@ let schema = yup.object().shape({
     .required("Email is required"),
   password: yup.string().required("Password is required"),
 });
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

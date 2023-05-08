@@ -28,10 +28,10 @@ const columns = [
 
 const BlogList = () => {
   const [open, setOpen] = useState(false);
-  const [blogId, setblogId] = useState("");
+  const [blogId, setBlogId] = useState("");
   const showModal = (e) => {
     setOpen(true);
-    setblogId(e);
+    setBlogId(e);
   };
 
   const hideModal = () => {
