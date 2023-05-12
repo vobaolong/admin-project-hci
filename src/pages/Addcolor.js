@@ -7,9 +7,9 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import {
   createColor,
-  getAColor,
+  getColor,
   resetState,
-  updateAColor,
+  updateColor,
 } from "../features/color/colorSlice";
 let schema = yup.object().shape({
   title: yup.string().required("Color is required"),
@@ -30,7 +30,7 @@ const AddColor = () => {
   } = newColor;
   useEffect(() => {
     if (getColorId !== undefined) {
-      dispatch(getAColor(getColorId));
+      dispatch(getColor(getColorId));
     } else {
       dispatch(resetState());
     }
@@ -56,7 +56,7 @@ const AddColor = () => {
     onSubmit: (values) => {
       if (getColorId !== undefined) {
         const data = { id: getColorId, colorData: values };
-        dispatch(updateAColor(data));
+        dispatch(updateColor(data));
         dispatch(resetState());
       } else {
         dispatch(createColor(values));

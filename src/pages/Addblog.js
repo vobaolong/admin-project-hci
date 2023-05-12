@@ -174,7 +174,7 @@ const AddBlog = () => {
           <div className="showimages d-flex flex-wrap mt-3 gap-3">
             {imgState?.map((i, j) => {
               return (
-                <div className=" position-relative" key={j}>
+                <div className="position-relative" key={j}>
                   <button
                     type="button"
                     onClick={() => dispatch(delImg(i.public_id))}

@@ -37,7 +37,7 @@ export const updateAEnquiry = createAsyncThunk(
   "enquiry/update-enquiry",
   async (enq, thunkAPI) => {
     try {
-      return await enquiryService.udpateEnquiry(enq);
+      return await enquiryService.updateEnquiry(enq);
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

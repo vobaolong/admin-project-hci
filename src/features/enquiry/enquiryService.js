@@ -14,7 +14,7 @@ const getEnquiry = async (id) => {
   const response = await axios.get(`${base_url}enquiry/${id}`);
   return response.data;
 };
-const udpateEnquiry = async (enq) => {
+const updateEnquiry = async (enq) => {
   const response = await axios.put(
     `${base_url}enquiry/${enq.id}`,
     { status: enq.enqData },
@@ -26,7 +26,7 @@ const enquiryService = {
   getEnquiries,
   deleteEnquiry,
   getEnquiry,
-  udpateEnquiry,
+  updateEnquiry,
 };
 
 export default enquiryService;
